@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Interfaces
+namespace Data
 {
-    public interface IService
+    public interface IProductsRepository
     {
         IEnumerable<Product> GetProducts();
-        Task CreateProductAsync(Product product);
+        Task Add(Product product);
     }
 }

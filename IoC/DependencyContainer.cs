@@ -1,4 +1,5 @@
 ﻿using Core;
+using Data;
 using Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -10,7 +11,10 @@ namespace IoC
 
         public static void RegisterServices(IServiceCollection services)
         {
-            services.AddSingleton<IService, Service>();
+            services.AddTransient<IService, Service>();
+            services.AddTransient<IProductsRepository, ProductsRepository>();
+
+            services.AddTransient<CRUDContext>();
         }
     }
 }

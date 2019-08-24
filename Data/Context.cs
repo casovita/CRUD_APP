@@ -6,8 +6,12 @@ using System.Text;
 
 namespace Data
 {
-    public class Context : DbContext
+    public class CRUDContext : DbContext
     {
-        public DbSet<Order> Orders { get; set; }
+        public CRUDContext(DbContextOptions options) : base(options)
+        {
+
+        }
+        public DbSet<Product> Products { get; set; }
     }
 }

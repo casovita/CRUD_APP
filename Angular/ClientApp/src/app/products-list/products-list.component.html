@@ -1,0 +1,5 @@
+<div>
+  <ul class="list-group">
+    <app-product *ngFor="let product of (products | async)" [product]="product"></app-product>
+  </ul>
+</div>
