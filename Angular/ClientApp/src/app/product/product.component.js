@@ -8,16 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var ProductComponent = /** @class */ (function () {
-    function ProductComponent() {
+    function ProductComponent(service) {
+        this.service = service;
     }
     ProductComponent.prototype.ngOnInit = function () {
+    };
+    ProductComponent.prototype.deleteProduct = function (id) {
+        console.log(id);
+        this.service.deleteProduct(id).subscribe((function (result) { return console.log(result); }));
     };
     __decorate([
         core_1.Input()
     ], ProductComponent.prototype, "product", void 0);
     ProductComponent = __decorate([
         core_1.Component({
-            selector: 'app-product',
+            selector: 'tr[app-product]',
             templateUrl: './product.component.html',
             styleUrls: ['./product.component.css']
         })

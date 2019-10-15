@@ -1,3 +1,7 @@
-<li class="list-group-item">
-  Name - {{product.name}}, Amount - {{product.amount}}
-</li>
+  <th scope="row">{{product.id}}</th>
+  <td>{{product.name}}</td>
+  <td>{{product.amount}}</td>
+  <td>
+    <button class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button>
+
+  </td>

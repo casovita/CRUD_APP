@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using Data.Entities;
+using Domain.Interfaces;
+using Domain.Models;
 
 namespace Data
 {
@@ -18,6 +18,16 @@ namespace Data
         {
             _ctx.Products.Add(product);
             await _ctx.SaveChangesAsync();
+        }
+
+        public async Task<bool> Delete(int id)
+        {
+            var target = _ctx.Products.SingleOrDefault(a => a.Id == id);
+            if (target == null) return false;
+
+            _ctx.Products.Remove(target);
+            await _ctx.SaveChangesAsync();
+            return true;
         }
 
         public IEnumerable<Product> GetProducts()

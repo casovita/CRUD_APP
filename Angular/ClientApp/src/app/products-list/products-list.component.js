@@ -12,7 +12,7 @@ var ProductsListComponent = /** @class */ (function () {
         this.service = service;
     }
     ProductsListComponent.prototype.ngOnInit = function () {
-        this.products = this.service.get_products();
+        this.products = this.service.getProducts();
     };
     ProductsListComponent = __decorate([
         core_1.Component({

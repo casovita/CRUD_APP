@@ -1,4 +1,4 @@
-﻿using Interfaces;
+﻿using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -33,7 +33,7 @@ namespace Angular.Controllers
         {
             try
             {
-                await service.CreateProductAsync(new Data.Entities.Product { Name = product.Name, Amount = product.Amount });
+                await service.CreateProductAsync(new Domain.Models.Product { Name = product.Name, Amount = product.Amount });
                 return Ok();
             }
             catch (System.Exception ex)
@@ -42,6 +42,18 @@ namespace Angular.Controllers
             }
         }
 
-
+        [HttpDelete("{id?}")]
+        public async Task<ActionResult> DeleteProduct(int id)
+        {
+            try
+            {
+               var result =  await service.DeleteProduct(id);
+                return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

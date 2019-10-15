@@ -1,6 +1,5 @@
-﻿using Data;
-using Data.Entities;
-using Interfaces;
+﻿using Domain.Interfaces;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +19,11 @@ namespace Core
         public Task CreateProductAsync(Product product)
         {
             return repository.Add(product);
+        }
+
+        public Task<bool> DeleteProduct(int id)
+        {
+            return repository.Delete(id);
         }
 
         public IEnumerable<Product> GetProducts()

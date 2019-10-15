@@ -1,5 +1,14 @@
-<div>
-  <ul class="list-group">
-    <app-product *ngFor="let product of (products | async)" [product]="product"></app-product>
-  </ul>
-</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr app-product *ngFor="let product of (products | async)" [product]="product"></tr>
+  </tbody>
+</table>
+

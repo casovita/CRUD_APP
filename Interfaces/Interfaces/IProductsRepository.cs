@@ -1,14 +1,13 @@
-﻿using Data.Entities;
-using System;
+﻿using Domain.Models;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace Domain.Interfaces
 {
     public interface IProductsRepository
     {
         IEnumerable<Product> GetProducts();
         Task Add(Product product);
+        Task<bool> Delete(int id);
     }
 }

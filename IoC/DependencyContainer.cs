@@ -1,6 +1,6 @@
 ﻿using Core;
 using Data;
-using Interfaces;
+using Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
